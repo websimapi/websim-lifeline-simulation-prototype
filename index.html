@@ -46,6 +46,15 @@
                 </div>
             </div>
             <button id="calculate-btn">Calculate Rocket Performance</button>
+            <div id="earth-section">
+                <h4>Earth Orbital Parameters</h4>
+                <div class="earth-stats">
+                    <div>Low Earth Orbit: 200-2000 km</div>
+                    <div>Orbital Velocity: 7.8 km/s</div>
+                    <div>Geostationary: 35,786 km</div>
+                    <div>Escape Velocity: 11.2 km/s</div>
+                </div>
+            </div>
         </div>
         
         <div id="launch-panel" class="panel">
@@ -63,10 +72,20 @@
                     <span>Fuel:</span>
                     <span id="fuel">100%</span>
                 </div>
+                <div class="stat">
+                    <span>Trajectory:</span>
+                    <span id="trajectory">Pre-launch</span>
+                </div>
             </div>
             <div class="launch-controls">
                 <button id="launch-btn">Launch Rocket</button>
                 <button id="abort-btn" disabled>Abort Mission</button>
+            </div>
+            <div class="trajectory-info">
+                <h3>Trajectory Analysis</h3>
+                <div id="trajectory-display">
+                    <p>Launch your rocket to see trajectory data</p>
+                </div>
             </div>
         </div>
         

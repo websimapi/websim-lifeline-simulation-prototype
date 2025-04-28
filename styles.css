@@ -274,3 +274,109 @@ button:disabled {
     background: rgba(52, 152, 219, 0.8);
 }
 
+.time-controls {
+    margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.time-control {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.time-control label {
+    margin-right: 10px;
+}
+
+.time-control select {
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+    border: 1px solid var(--primary-color);
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.orbit-info {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: rgba(52, 152, 219, 0.1);
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.orbit-info p {
+    margin: 5px 0;
+}
+
+.trajectory-status {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 0.8em;
+    margin-left: 5px;
+}
+
+.trajectory-status.suborbital {
+    background-color: var(--warning-color);
+}
+
+.trajectory-status.orbital {
+    background-color: var(--success-color);
+}
+
+.trajectory-status.escape {
+    background-color: var(--accent-color);
+}
+
+.celestial-tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    font-size: 0.9em;
+    pointer-events: none;
+    z-index: 1000;
+    max-width: 200px;
+}
+
+.loading-indicator {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    display: none;
+}
+
+.loading-indicator.active {
+    display: block;
+}
+
+#earth-section {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: rgba(46, 204, 113, 0.1);
+    border-radius: 5px;
+}
+
+#earth-section h4 {
+    color: var(--success-color);
+    margin-bottom: 8px;
+}
+
+.earth-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    font-size: 0.85em;
+}
