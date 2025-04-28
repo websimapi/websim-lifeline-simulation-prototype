@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --accent-color: #e74c3c;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --success-color: #2ecc71;
+    --warning-color: #f39c12;
+}
+
+body {
+    background-color: #121212;
+    color: var(--light-color);
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#ui-container {
+    width: 30%;
+    background-color: rgba(20, 20, 20, 0.9);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+#header {
+    background-color: var(--secondary-color);
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+#tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    color: var(--light-color);
+    padding: 8px 15px;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.tab-btn:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s;
+}
+
+.tab-btn.active {
+    color: var(--primary-color);
+}
+
+.tab-btn.active:after {
+    width: 100%;
+}
+
+.panel {
+    display: none;
+    padding: 20px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.panel.active {
+    display: block;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    font-size: 1.3rem;
+}
+
+h3 {
+    margin: 15px 0 10px;
+    color: var(--light-color);
+    font-size: 1.1rem;
+}
+
+.component-list {
+    margin-bottom: 20px;
+}
+
+.components {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.component {
+    background-color: rgba(52, 152, 219, 0.2);
+    border: 1px solid var(--primary-color);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.component:hover {
+    background-color: rgba(52, 152, 219, 0.4);
+}
+
+.properties-panel {
+    background-color: rgba(44, 62, 80, 0.3);
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+button:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+}
+
+#calculate-btn {
+    width: 100%;
+    margin-top: 20px;
+}
+
+#launch-btn {
+    background-color: var(--success-color);
+}
+
+#launch-btn:hover {
+    background-color: #27ae60;
+}
+
+#abort-btn {
+    background-color: var(--accent-color);
+}
+
+#abort-btn:hover {
+    background-color: #c0392b;
+}
+
+.launch-stats, .lifeline-stats {
+    background-color: rgba(44, 62, 80, 0.3);
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.stat {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.launch-controls {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.launch-controls button {
+    flex: 1;
+}
+
+#lifeline-map {
+    background-color: rgba(44, 62, 80, 0.3);
+    border-radius: 5px;
+    padding: 15px;
+    height: 300px;
+    position: relative;
+}
+
+.map-legend {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.legend-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.legend-dot.satellite {
+    background-color: var(--primary-color);
+}
+
+.legend-dot.relay {
+    background-color: var(--success-color);
+}
+
+.legend-dot.cargo {
+    background-color: var(--warning-color);
+}
+
+#simulation-container {
+    flex: 1;
+    height: 100%;
+    position: relative;
+}
+
+#simulation-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+#simulation-info {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(52, 152, 219, 0.5);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(52, 152, 219, 0.8);
+}
+

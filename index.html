@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lifeline Simulation Prototype</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.157.0/build/three.module.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.157.0/examples/jsm/",
+                "cannon-es": "https://cdn.jsdelivr.net/npm/cannon-es@0.20.0/dist/cannon-es.js"
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="ui-container">
+        <div id="header">
+            <h1>Lifeline Simulation</h1>
+            <div id="tabs">
+                <button class="tab-btn active" data-tab="design">Rocket Design</button>
+                <button class="tab-btn" data-tab="launch">Launch</button>
+                <button class="tab-btn" data-tab="lifeline">Lifeline</button>
+            </div>
+        </div>
+        
+        <div id="design-panel" class="panel active">
+            <h2>Rocket Design</h2>
+            <div class="component-list">
+                <h3>Components</h3>
+                <div class="components">
+                    <div class="component" data-type="engine">Engine</div>
+                    <div class="component" data-type="fuel-tank">Fuel Tank</div>
+                    <div class="component" data-type="payload">Payload</div>
+                    <div class="component" data-type="satellite">Satellite</div>
+                    <div class="component" data-type="relay">Quantum Relay</div>
+                    <div class="component" data-type="cargo">Cargo Bay</div>
+                </div>
+            </div>
+            <div class="properties-panel">
+                <h3>Properties</h3>
+                <div id="component-properties">
+                    <p>Select a component to view and edit properties</p>
+                </div>
+            </div>
+            <button id="calculate-btn">Calculate Rocket Performance</button>
+        </div>
+        
+        <div id="launch-panel" class="panel">
+            <h2>Launch Control</h2>
+            <div class="launch-stats">
+                <div class="stat">
+                    <span>Altitude:</span>
+                    <span id="altitude">0 km</span>
+                </div>
+                <div class="stat">
+                    <span>Velocity:</span>
+                    <span id="velocity">0 km/s</span>
+                </div>
+                <div class="stat">
+                    <span>Fuel:</span>
+                    <span id="fuel">100%</span>
+                </div>
+            </div>
+            <div class="launch-controls">
+                <button id="launch-btn">Launch Rocket</button>
+                <button id="abort-btn" disabled>Abort Mission</button>
+            </div>
+        </div>
+        
+        <div id="lifeline-panel" class="panel">
+            <h2>Lifeline Network</h2>
+            <div class="lifeline-stats">
+                <div class="stat">
+                    <span>Devices:</span>
+                    <span id="device-count">0</span>
+                </div>
+                <div class="stat">
+                    <span>Network Integrity:</span>
+                    <span id="network-integrity">0%</span>
+                </div>
+                <div class="stat">
+                    <span>Data Throughput:</span>
+                    <span id="data-throughput">0 Qbits/s</span>
+                </div>
+            </div>
+            <div id="lifeline-map">
+                <div class="map-legend">
+                    <div><span class="legend-dot satellite"></span> Satellite</div>
+                    <div><span class="legend-dot relay"></span> Quantum Relay</div>
+                    <div><span class="legend-dot cargo"></span> Cargo Bay</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="simulation-container">
+        <canvas id="simulation-canvas"></canvas>
+        <div id="simulation-info"></div>
+    </div>
+    
+    <script type="module" src="main.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4c6229722a6346bc8eb5cb0e5eae5d41","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
+
